@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Backyard Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	</head>
+
+	<body>
+
+		<div data-role="page" id="posts">
+
+			<div data-role="header" data-id="header-posts" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true" class="ui-btn-active ui-state-persist">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d">
+
+					<div data-role="collapsible">
+						<h3>Post A</h3>
+						<p>I'm the collapsible set content for section 1.</p>
+					</div>
+					
+					<div data-role="collapsible">
+						<h3>Post B</h3>
+						<p>I'm the collapsible set content for section 2.</p>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="quickies">
+
+			<div data-role="header" data-id="header-quickies" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true" class="ui-btn-active ui-state-persist">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<ul data-role="listview">
+					<li>Quickie A</li>
+					<li>Quickie B</li>
+					<li>Quickie C</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="directory">
+
+			<div data-role="header" data-id="header-directory" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true" class="ui-btn-active ui-state-persist">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d">
+
+					<div data-role="collapsible">
+						<h3>Employee A</h3>
+						<p>I'm the collapsible set content for section 1.</p>
+					</div>
+					
+					<div data-role="collapsible">
+						<h3>Employee B</h3>
+						<p>I'm the collapsible set content for section 2.</p>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>
