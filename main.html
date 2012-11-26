@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Backyard Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+		<script type="text/javascript" charset="utf-8" src="js/cordova-1.8.1.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script src="js/backyard_mobile.js"></script>
+	</head>
+
+	<body>
+
+		<div data-role="page" id="posts">
+
+			<div data-role="header" data-id="header-posts" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true" class="ui-btn-active ui-state-persist">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<div id="posts-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="quickies">
+
+			<div data-role="header" data-id="header-quickies" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true" class="ui-btn-active ui-state-persist">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<ul id="quickies-list" data-role="listview"></ul>
+			</div>
+
+		</div>
+
+		<div data-role="page" id="directory">
+
+			<div data-role="header" data-id="header-directory" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true">Posts</a></li>
+						<li><a href="#quickies" data-prefetch="true">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true" class="ui-btn-active ui-state-persist">Staff Directory</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content">
+				<div id="directory-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
+			</div>
+
+		</div>
+	</body>
+</html>

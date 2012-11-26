@@ -1,10 +1,68 @@
-$(document).bind( "pagechange", function( event, data ){
+function init() {
+	document.addEventListener("deviceready", deviceReady, true);
+	delete init;
+}
+
+function checkPreAuth() {
+	console.log("checkPreAuth");
+	if (window.localStorage["user_id"] != undefined && window.localStorage["user_key"] != undefined) {
+		$.mobile.changePage('main.html');
+	}
+}
+
+function handleLogin() {
+	var form = $("#loginForm");    
+	//disable the button so we can't resubmit while we wait
+	$("#submitButton",form).attr("disabled","disabled");
+	var u = $("#username", form).val();
+	var p = $("#password", form).val();
+	
+	if (u != '' && p!= '') {
+		$.ajax({
+			url: 'http://backyard.inetinteractive.com/inet_mobile/login',
+			dataType: 'jsonp',
+			data: {user_login:u,user_password:p},
+			success: function(response) {
+				if (response.result == 'success') {
+					//store
+					window.localStorage['user_id'] = response.data.user_id;
+					window.localStorage['user_key'] = response.data.user_key;
+					$.mobile.changePage('main.html');
+				} else {
+					navigator.notification.alert("Your login failed", function() {});
+				}
+				$("#submitButton").removeAttr("disabled");
+			}
+		});
+	} else {
+		navigator.notification.alert("You must enter a username and password", function() {});
+		$("#submitButton").removeAttr("disabled");
+	}
+	return false;
+}
+
+function deviceReady() {
+	console.log("deviceReady");
+	$("#loginPage").on("pageinit",function() {
+		console.log("pageinit run");
+		$("#loginForm").on("submit",handleLogin);
+		checkPreAuth();
+	});
+	$.mobile.changePage("#loginPage");
+}
+
+$(document).ready(function() {
+		checkPreAuth();
+	$("#loginForm").on("submit",handleLogin);
+});
+$(document).bind("pagechange", function(event, data) {
 
 	var id = data.toPage[0].id;
 
 	$.ajax({
 		url: 'http://backyard.inetinteractive.com/inet_mobile/'+id,
 		dataType: 'jsonp',
+		data: {user_id:window.localStorage['user_id'],user_key:window.localStorage['user_key']},
 		success: function(response) {
 
 			console.log(response.data);
