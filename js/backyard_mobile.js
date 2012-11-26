@@ -32,7 +32,7 @@ $(document).bind( "pagechange", function( event, data ){
 				$.each(response.data, function(index, el) {
 					var content = el.content;
 					content = content.replace('@rooster ', '');
-					content = content.replace('<p>', '<p><strong>'+el.author+'</strong>: ');
+					content = content.replace('<p>', '<p style="white-space:normal;"><strong>'+el.author+'</strong>: ');
 					content += '<p style="font-size: smaller; color: #999;"><em>'+el.time_since+'</em></p>';
 					var quickie = $('<li>'+content+'</li>');
 					$('#quickies-list').append(quickie);
@@ -49,6 +49,7 @@ $(document).bind( "pagechange", function( event, data ){
 						'<div data-role="collapsible">' +
 							'<h3>'+el.display_name+' <span style="font-size: smaller; color: #999;">'+el.inet_jobtitle+'</span></h3>' +
 							'<p><img src="'+el.img_url+'" width="59" height="70" alt="'+el.display_name+'\'s Mug" class="staffDirectoryPhoto" />' +
+							'<p><strong>Title</strong>: '+el.inet_jobtitle+'</p>' +
 							'<p><strong>Department</strong>: '+el.inet_department+'</p>' +
 							'<p><strong>Office Location</strong>: '+el.inet_office_location+'</p>' +
 							'<p><strong>Office Phone</strong>: '+el.inet_office_phone+'</p>' +
