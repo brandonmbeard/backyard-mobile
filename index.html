@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script src="js/backyard_mobile.js"></script>
 	</head>
 
 	<body>
@@ -23,19 +24,7 @@
 			</div>
 
 			<div data-role="content">
-				<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d">
-
-					<div data-role="collapsible">
-						<h3>Post A</h3>
-						<p>I'm the collapsible set content for section 1.</p>
-					</div>
-					
-					<div data-role="collapsible">
-						<h3>Post B</h3>
-						<p>I'm the collapsible set content for section 2.</p>
-					</div>
-					
-				</div>
+				<div id="posts-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
 			</div>
 
 		</div>
@@ -53,11 +42,7 @@
 			</div>
 
 			<div data-role="content">
-				<ul data-role="listview">
-					<li>Quickie A</li>
-					<li>Quickie B</li>
-					<li>Quickie C</li>
-				</ul>
+				<ul id="quickies-list" data-role="listview"></ul>
 			</div>
 
 		</div>
@@ -75,22 +60,9 @@
 			</div>
 
 			<div data-role="content">
-				<div data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d">
-
-					<div data-role="collapsible">
-						<h3>Employee A</h3>
-						<p>I'm the collapsible set content for section 1.</p>
-					</div>
-					
-					<div data-role="collapsible">
-						<h3>Employee B</h3>
-						<p>I'm the collapsible set content for section 2.</p>
-					</div>
-					
-				</div>
+				<div id="directory-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
 			</div>
 
 		</div>
-
 	</body>
 </html>
