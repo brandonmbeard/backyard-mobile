@@ -45,11 +45,22 @@ function deviceReady() {
 	console.log("deviceReady");
 	$("#loginPage").on("pageinit",function() {
 		console.log("pageinit run");
-		$("#loginForm").on("submit",handleLogin);
+		$("#loginForm").on("submit", handleLogin);
 		checkPreAuth();
 	});
 	$.mobile.changePage("#loginPage");
 }
+
+function clearLogout() {
+	console.log('Logout!');
+	delete window.localStorage['user_id'];
+	delete window.localStorage['user_key'];
+	$.mobile.changePage("#loginPage");
+}
+
+$(document).ready(function() {
+	$('.logout').on('click', clearLogout);
+});
 
 $(document).bind("pagechange", function(event, data) {
 
