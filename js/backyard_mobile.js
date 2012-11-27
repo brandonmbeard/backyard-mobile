@@ -51,10 +51,6 @@ function deviceReady() {
 	$.mobile.changePage("#loginPage");
 }
 
-$(document).ready(function() {
-		checkPreAuth();
-	$("#loginForm").on("submit",handleLogin);
-});
 $(document).bind("pagechange", function(event, data) {
 
 	var id = data.toPage[0].id;
