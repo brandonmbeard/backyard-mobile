@@ -58,10 +58,6 @@ function clearLogout() {
 	$.mobile.changePage("#loginPage");
 }
 
-$(document).ready(function() {
-	$('.logout').on('click', clearLogout);
-});
-
 $(document).bind("pagechange", function(event, data) {
 
 	var id = data.toPage[0].id;
@@ -131,6 +127,8 @@ $(document).bind("pagechange", function(event, data) {
 					$('div[data-role=collapsible]').collapsible();
 				});
 			}
+
+			$('a.logout').on('click', clearLogout);
 		}
 	});
 
