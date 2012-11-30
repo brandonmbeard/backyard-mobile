@@ -9,64 +9,84 @@
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		<script src="js/backyard_mobile.js"></script>
-	</head>
+	<style>
+	a {color: #65b2e9; text-decoration:none;}
+	a:hover {color: #004b98; border-bottom:1px solid #004b98;}
+	</style>
+    </head>
+    
 
 	<body>
 
 		<div data-role="page" id="posts">
 
-			<div data-role="header" data-id="header-posts" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#posts" data-prefetch="true" data-ajax="false" class="ui-btn-active ui-state-persist">Posts</a></li>
-						<li><a href="#quickies" data-prefetch="true" data-ajax="false">Quickies</a></li>
-						<li><a href="#directory" data-prefetch="true" data-ajax="false">Staff</a></li>
-					</ul>
-				</div>
+			<div data-role="header" data-id="header-posts">
+            	<a href="#" data-prefetch="true" data-ajax="false" data-icon="forward" data-iconpos="notext" onclick="location.reload(true)"></a>
+            	<h1>iNet Backyard</h1>
+            	<a href="#" data-icon="gear" class="logout ui-btn-right">Logout</a>
 			</div>
 
 			<div data-role="content">
-				<div id="posts-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
-				<a href="#" class="logout">Logout</a>
+				<div id="posts-set" data-role="collapsible-set" data-inset="false" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-theme="c" data-content-theme="d"></div>
 			</div>
+            
+            <div data-role="footer" data-id="footer-posts" data-position="fixed">
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true" data-ajax="false" data-icon="home" data-transition="slidefade" class="ui-btn-active ui-state-persist">Home</a></li>
+						<li><a href="#quickies" data-prefetch="true" data-ajax="false" data-icon="star" data-transition="none">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true" data-ajax="false" data-icon="grid" data-transition="slidefade">Staff</a></li>
+					</ul>
+				</div>
+            </div>
 
 		</div>
 
 		<div data-role="page" id="quickies">
 
-			<div data-role="header" data-id="header-quickies" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#posts" data-prefetch="true" data-ajax="false">Posts</a></li>
-						<li><a href="#quickies" data-prefetch="true" data-ajax="false" class="ui-btn-active ui-state-persist">Quickies</a></li>
-						<li><a href="#directory" data-prefetch="true" data-ajax="false">Staff</a></li>
-					</ul>
-				</div>
+			<div data-role="header" data-id="header-quickies">
+            	<a href="#" data-prefetch="true" data-ajax="false" data-icon="forward" data-iconpos="notext" onclick="location.reload(true)"></a>
+            	<h1>iNet Backyard</h1>
+            	<a href="#" data-icon="gear" class="logout ui-btn-right">Logout</a>
 			</div>
-
+            
 			<div data-role="content">
 				<ul id="quickies-list" data-role="listview"></ul>
-				<a href="#" class="logout">Logout</a>
 			</div>
-
+            
+            <div data-role="footer" data-id="footer-quickies" data-position="fixed">
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true" data-ajax="false" data-icon="home" data-transition="slidefade">Home</a></li>
+						<li><a href="#quickies" data-prefetch="true" data-ajax="false" data-icon="star" data-transition="slidefade" class="ui-btn-active ui-state-persist">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true" data-ajax="false" data-icon="grid" data-transition="slidefade">Staff</a></li>
+					</ul>
+				</div>
+            </div>
+            
 		</div>
 
 		<div data-role="page" id="directory">
 
-			<div data-role="header" data-id="header-directory" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#posts" data-prefetch="true" data-ajax="false">Posts</a></li>
-						<li><a href="#quickies" data-prefetch="true" data-ajax="false">Quickies</a></li>
-						<li><a href="#directory" data-prefetch="true" data-ajax="false" class="ui-btn-active ui-state-persist">Staff</a></li>
-					</ul>
-				</div>
+			<div data-role="header" data-id="header-directory">
+            	<a href="#" data-prefetch="true" data-ajax="false" data-icon="forward" data-iconpos="notext" onclick="location.reload(true)"></a>
+            	<h1>iNet Backyard</h1>
+            	<a href="#" data-icon="gear" class="logout ui-btn-right">Logout</a>
 			</div>
 
 			<div data-role="content">
-				<div id="directory-set" data-role="collapsible-set" data-inset="false" data-theme="c" data-content-theme="d"></div>
-				<a href="#" class="logout">Logout</a>
+				<div id="directory-set" data-role="collapsible-set" data-inset="false" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-theme="c" data-content-theme="d"></div>
 			</div>
+            
+            <div data-role="footer" data-id="footer-directory" data-position="fixed">
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#posts" data-prefetch="true" data-ajax="false" data-icon="home" data-transition="slidefade">Home</a></li>
+						<li><a href="#quickies" data-prefetch="true" data-ajax="false" data-icon="star" data-transition="slidefade">Quickies</a></li>
+						<li><a href="#directory" data-prefetch="true" data-ajax="false" data-icon="grid" data-transition="slidefade" class="ui-btn-active ui-state-persist">Staff</a></li>
+					</ul>
+				</div>
+            </div>            
 
 		</div>
 	</body>
