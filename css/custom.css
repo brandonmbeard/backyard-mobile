@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+a { color: #65b2e9; text-decoration: none; }
+a:hover { color: #009bdf; }
+
+.author { font-size: 12px; line-height: 11px; }
+.contact_detail { font-size: 13px; line-height: 11px;}

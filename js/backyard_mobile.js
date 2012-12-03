@@ -1,3 +1,8 @@
+$(document).bind("mobileinit", function(){
+	$.mobile.defaultPageTransition = "none";
+	$.mobile.useFastClick = "true";
+});
+
 function init() {
 	document.addEventListener("deviceready", deviceReady, true);
 	delete init;
@@ -55,7 +60,7 @@ function clearLogout() {
 	console.log('Logout!');
 	delete window.localStorage['user_id'];
 	delete window.localStorage['user_key'];
-	$.mobile.changePage("index.html");
+	$.mobile.changePage("#loginPage");
 }
 
 $(document).bind("pagechange", function(event, data) {
@@ -78,7 +83,7 @@ $(document).bind("pagechange", function(event, data) {
 					var post = $(
 						'<div data-role="collapsible">' +
 							'<h3>'+el.title+'</h3>' +
-							'<p>Published '+el.date_published+' by '+el.author+'</p>' +
+							'<p class="author">Published '+el.date_published+' by '+el.author+'</p>' +
 							'<p>'+el.content+'</p>' +
 						'</div>'
 					);
@@ -108,20 +113,20 @@ $(document).bind("pagechange", function(event, data) {
 				$.each(response.data, function(index, el) {
 					var post = $(
 						'<div data-role="collapsible" style="line-height:10px;">' +
-							'<h3><img src="'+el.img_url+'" width="59" height="70" alt="'+el.display_name+'\'s Mug" class="staffDirectoryPhoto" style="float: left; margin-right: 10px;"/><div style="line-height:7px;"><p>'+el.display_name+'</p><p style="font-size: smaller; color: #999;">'+el.inet_jobtitle+'</p><p style="font-size: smaller; color: #999;"><a href="tel:'+el.inet_office_phone+'" style="text-decoration:none;" >'+el.inet_office_phone+'</a></p></div></h3>' +
-							
-							'<p><strong>Title</strong>: '+el.inet_jobtitle+'</p>' +
+							'<h3><img src="'+el.img_url+'" width="59" height="70" alt="'+el.display_name+'\'s Mug" class="staffDirectoryPhoto" style="float: left; margin-right: 10px;"/><div style="line-height:7px;"><p>'+el.display_name+'</p><p style="font-size: smaller; color: #999;">'+el.inet_jobtitle+'</p><p style="font-size: smaller; color: #999;"><a href="tel:'+el.inet_office_phone+'">'+el.inet_office_phone+'</a></p></div></h3>' +
+
+							'<div class="contact_detail"><p><strong>Title</strong>: '+el.inet_jobtitle+'</p>' +
 							'<p><strong>Department</strong>: '+el.inet_department+'</p>' +
 							'<p><strong>Office Location</strong>: '+el.inet_office_location+'</p>' +
-							'<p><strong>Office Phone</strong>: <a href="tel:'+el.inet_office_phone+'">'+el.inet_office_phone+'</a></p>' +
-							'<p><strong>Mobile Phone</strong>: <a href="tel:'+el.inet_mobile_phone+'">'+el.inet_mobile_phone+'</a></p>' +
-							'<p><strong>Home Phone</strong>: <a href="tel:'+el.inet_home_phone+'">'+el.inet_home_phone+'</a></p>' +
+							'<p><strong>Office Phone</strong>: <a href="tel: '+el.inet_office_phone+'">'+el.inet_office_phone+'</a></p>' +
+							'<p><strong>Mobile Phone</strong>: <a href="tel: '+el.inet_mobile_phone+'">'+el.inet_mobile_phone+'</a></p>' +
+							'<p><strong>Home Phone</strong>: <a href="tel: '+el.inet_home_phone+'">'+el.inet_home_phone+'</a></p>' +
 							'<p><strong>Skype</strong>: <a href="skype:'+el.inet_skype+'">'+el.inet_skype+'</a></p>' +
 							'<p><strong>MSN</strong>: '+el.inet_msn+'</p>' +
 							'<p><strong>AIM</strong>: '+el.aim+'</p>' +
 							'<p><strong>Yahoo</strong>: '+el.yim+'</p>' +
 							'<p><strong>Gtalk</strong>: '+el.jabber+'</p>' +
-						'</div>'
+						'</div></div>'
 					);
 					$('#directory-set').append(post);
 					$('div[data-role=collapsible]').collapsible();

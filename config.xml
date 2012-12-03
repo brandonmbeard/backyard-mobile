@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.inetinteractive.backyard"
+        versionCode="10" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Backyard Mobile</name>
+
+    <description>
+        A Proof of Concept App 
+    </description>
+
+    <author href="http://www.inetinteractive.com" email="development@inetinteractive.com">
+        Aaron Forgue
+    </author>
+	
+	 <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version" value="2.1.0" />
+    <preference name="orientation"      value="default" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="true" />
+	<preference name="webviewbounce"    value="false" />
+
+    <gap:splash src="splash.png"    gap:platform="andriod"     width="640" height="1138" />
+    <gap:splash src="splash.png"    gap:platform="ios"     width="640" height="1138" />
+
+</widget>
