@@ -22,7 +22,7 @@
     <preference name="phonegap-version" value="2.1.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="true" />
+    <preference name="fullscreen"       value="false" />
 	<preference name="webviewbounce"    value="false" />
 
     <gap:splash src="splash.png"    gap:platform="andriod"     width="640" height="1138" />
